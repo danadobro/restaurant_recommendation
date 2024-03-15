@@ -28,6 +28,7 @@ body {
     color: #333;
     line-height: 1.6;
     margin: 0;
+
 }
 
 header h1 {
@@ -106,7 +107,7 @@ form select:focus, form button:focus {
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 20px;
-    background-image: url('../project/background\ pancakes.jpg');
+    background-image: url('../images/background_panckaces.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -120,4 +121,54 @@ h4{
     text-align: center;
     margin: 20px 0;
     font-weight: bold;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: white;
+    background-color: #D11648; /* raspberry red Register title */
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.btn {
+    background-color: #D11648; /* raspberry red sign up btn */
+    color: white; /* White for contrast */
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+
+}
+.btn:hover {
+    background-color: #7a0423; /* Darker shade of red for the hover state */
+}
+.form-control {
+    width: 80%;
+    padding: 15px;
+    margin: auto;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+.container {
+
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 60%;
+    max-width: 500px; /* For larger screens */
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the form */
+}
+
+.form-group {
+    margin-bottom: 15px; /* margin for spacing */
 }

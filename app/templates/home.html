@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>home</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
 </head>
 <body>
     <header>
@@ -13,6 +13,8 @@
                 <li><a href="home.html">Home</a></li>
                 <li><a href="explore.html">Explore</a></li>
                 <li><a href="account.html">Account</a></li>
+                <li><a href="register.html">Account</a></li>
+                 <li><a href="{{ url_for('register') }}">Register</a></li>
             </ul>
         </nav>
     </header>
