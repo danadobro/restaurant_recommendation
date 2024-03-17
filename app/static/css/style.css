@@ -28,6 +28,8 @@ body {
     color: #333;
     line-height: 1.6;
     margin: 0;
+    justify-content: center;
+    align-items: center;
 
 }
 
@@ -171,4 +173,50 @@ h2 {
 
 .form-group {
     margin-bottom: 15px; /* margin for spacing */
+}
+
+
+
+.restaurant {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.restaurant:last-child {
+    border: none;
+}
+
+.restaurant h3 {
+    color: #000033;
+    margin-top: 0;
+}
+
+.restaurant p {
+    margin: 5px 0;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.recommendations {
+    background: #fff;
+    width: auto;
+    max-width: 600px;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

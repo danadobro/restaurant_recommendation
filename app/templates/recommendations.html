@@ -1,0 +1,46 @@
+<!-- The page that shows the recommendations -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('account') }}">Account</a></li>
+                 <li><a href="{{ url_for('register') }}">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h2>Restaurant Recommendations</h2>
+    <!-- Check if there are any recommendations -->
+    {% if recommendations %}
+        <div class="recommendations">
+            {% for restaurant in recommendations %}
+                <div class="restaurant">
+                    <h3>{{ restaurant.name }}</h3>
+                    <p>Cuisine: {{ restaurant.cuisine}}</p>
+                    <p>Budget:
+                        {% if restaurant.budget < 150 %}
+                            Under 150
+                        {% elif restaurant.budget <= 250 %}
+                            150 - 250
+                        {% else %}
+                            Over 250
+                        {% endif %}
+                    </p>
+                    <p>Vibe: {{ restaurant.vibe }}</p>
+
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>Sorry, we couldn't find any restaurants that match your criteria. Try searching again!</p>
+    {% endif %}
+    <a href="{{ url_for('home') }}">Back to Search</a>
+</body>
+</html>

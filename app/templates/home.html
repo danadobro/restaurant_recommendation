@@ -10,8 +10,7 @@
     <header>
         <nav>
             <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="explore.html">Explore</a></li>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
                 <li><a href="{{ url_for('account') }}">Account</a></li>
                  <li><a href="{{ url_for('register') }}">Register</a></li>
             </ul>
@@ -19,61 +18,24 @@
     </header>
 
     <main>
-        <h4> What are you in the mood for today? </h4>
-        <form id="foodSelection">
-            <label for="cuisine">Choose a cuisine:</label>
-            <select name="cuisine" id="cuisine">
-                <option value="any">Surprise Me!</option>
-                <option value="italian">Italian</option>
-                <option value="japanese">Japanese</option>
-                <option value="mexican">Mexican</option>
-                <option value="chinese">Chinese</option>
-                <option value="french">French</option>
-                <option value="turkish">Turkish</option>
-                <option value="american">American</option>
-                <option value="thai">Thai</option>
-                <option value="brazilian">Brazilian</option>
-                <option value="yemeni">Yemeni</option>
-                <option value="greek">Greek</option>
-                <option value="canadian">Canadian</option>
-                <option value="indo-chinese">Indo-chinese</option>
-                <option value="eastern-european">Eastern European</option>
-                <option value="bar">Bar</option>
-                <option value="indian">Indian</option>
+       <h4> What are you in the mood for today? </h4>
+        <form method="POST" action="{{ url_for('search') }}">
+        {{ form.hidden_tag() }}
+        <label for="cuisine">Choose a cuisine:</label>
+        {{ form.cuisine(class_='form-control', id='cuisine') }}
 
-            </select>
+        <label for="budget">Select your budget:</label>
+        {{ form.budget(class_='form-control', id='budget') }}
 
-            <label for="budget">Select your budget:</label>
-            <select name="budget" id="budget">
-                <option value="any"> Surprise Me!</option>
-                <option value="low"> under 150 </option>
-                <option value="medium">150-250</option>
-                <option value="high"> over 250</option>
-            </select>
+        <label for="vibe">Choose the vibe:</label>
+        {{ form.vibe(class_='form-control', id='vibe') }}
 
-            <label for="vibe">Choose the vibe:</label>
-            <select name="vibe" id="vibe">
-                <option value="any"> Surprise Me!</option>
-                <option value="casual">Casual</option>
-                <option value="relaxed">Relaxed</option>
-                <option value="family">Family</option>
-                <option value="aesthetic">Aesthetic</option>
-                <option value="smart">Smart</option>
-                <option value="bar">Bar</option>
-                <option value="late">Late</option>
-                <option value="fine">Fine Dining</option>
-                <option value="entertainment">Entertainment</option>
-                <option value="romantic">Romantic</option>
-
-
-            </select>
-
-            <button type="submit">Find a Restaurant</button>
+        {{ form.submit(class_='btn btn-primary') }}
         </form>
     </main>
 
     <footer>
-        <!-- Footer content goes here -->
+
     </footer>
 
     <script src="script.js"></script>
